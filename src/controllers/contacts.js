@@ -10,12 +10,12 @@ import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
 import { parseFilterParams } from '../utils/parseFilterParams.js';
 
-export const getMainController = async (req, res) => {
-  res.json({
-    status: 200,
-    message: 'Hello!',
-  });
-};
+// export const getMainController = async (req, res) => {
+//   res.json({
+//     status: 200,
+//     message: 'Hello!',
+//   });
+// };
 
 export const getContactsController = async (req, res) => {
   const { page, perPage } = parsePaginationParams(req.query);

@@ -3,7 +3,6 @@ import {
     getContactsController,
     getContactByIdController,
     createContactController,
-    upsertContactController,
     deleteContactController,
     patchContactController,
 } from '../controllers/contacts.js';
