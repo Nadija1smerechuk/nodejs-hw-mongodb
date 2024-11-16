@@ -10,12 +10,7 @@ import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
 import { parseFilterParams } from '../utils/parseFilterParams.js';
 
-// export const getMainController = async (req, res) => {
-//   res.json({
-//     status: 200,
-//     message: 'Hello!',
-//   });
-// };
+
 
 export const getContactsController = async (req, res) => {
   const { page, perPage } = parsePaginationParams(req.query);
@@ -85,41 +80,6 @@ export const createContactController = async (req, res, next) => {
   });
 };
 
-export const upsertContactController = async (req, res, next) => {
-  const { contactId } = req.params;
-  const userId = req.user._id;
-  const { name, phoneNumber, contactType } = req.body;
-
-  const result = await updateContact({ contactId, userId }, req.body, {
-    upsert: true,
-  });
-
-  if (!result) {
-    next(createHttpError(404, 'Contact not found!'));
-    return;
-  }
-
-  if (result.isNew) {
-    if (!name || !phoneNumber || !contactType) {
-      return next(
-        createHttpError(
-          400,
-          'Name, Phone Number, Contact Type and User Id are required when creating a contact!',
-        ),
-      );
-    }
-  }
-
-  const status = result.isNew ? 201 : 200;
-
-  res.status(status).json({
-    status,
-    message: result.isNew
-      ? 'Successfully created a contact!'
-      : 'Successfully updated the contact!',
-    data: result.contact,
-  });
-};
 
 export const patchContactController = async (req, res, next) => {
   const { contactId } = req.params;

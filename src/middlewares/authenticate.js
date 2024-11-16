@@ -12,7 +12,7 @@ export const authenticate = async (req, res, next) => {
     return;
   }
 
-  
+
   const bearer = authHeader.split(' ')[0];
   const token = authHeader.split(' ')[1];
 
@@ -36,7 +36,8 @@ export const authenticate = async (req, res, next) => {
     next(createHttpError(401, 'Access token expired'));
   }
 
-  const user = await UsersCollection.findById(session.userId);
+  // const user = await UsersCollection.findById(session.userId);
+   const user = await UsersCollection.findOne({ _id: session.userId });
 
   if (!user) {
     next(createHttpError(401));
