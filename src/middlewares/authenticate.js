@@ -17,7 +17,6 @@ export const authenticate = async (req, res, next) => {
   const token = authHeader.split(' ')[1];
 
   if (bearer !== 'Bearer' || !token) {
-
     next(createHttpError(401, 'Auth header should be of type Bearer'));
     return;
   }
