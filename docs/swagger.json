@@ -7,20 +7,20 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "description": "This is a documentation of My Contacts app"
+    "description": "This is a documentation of contacts app"
   },
   "servers": [
     {
       "url": "http://localhost:3000"
     },
     {
-      "url": "https://nodejs-hw-mongodb-6-eyze.onrender.com"
+      "url": "https://example.com/api/v1"
     }
   ],
   "tags": [
     {
       "name": "Contacts",
-      "description": "Operations about users."
+      "description": "Operations about contacts."
     },
     {
       "name": "Auth",
@@ -63,7 +63,7 @@
             "name": "sortBy",
             "schema": {
               "type": "string",
-              "example": "age"
+              "example": "name"
             },
             "description": "All contact's fields can be mentioned. Default value - _id"
           },
@@ -97,7 +97,7 @@
             "name": "isFavourite",
             "schema": {
               "type": "boolean",
-              "example": "true"
+              "example": "false"
             }
           }
         ],
@@ -218,7 +218,7 @@
                   "isFavourite": {
                     "description": "Whether is contact a favorite",
                     "type": "boolean",
-                    "example": false
+                    "example": true
                   },
                   "contactType": {
                     "description": "Contact's type",
@@ -496,8 +496,7 @@
           "_id",
           "name",
           "phoneNumber",
-          "contactType",
-          "userId"
+          "contactType"
         ],
         "properties": {
           "_id": {
@@ -524,7 +523,7 @@
           "isFavourite": {
             "description": "Contact's is favourite choice",
             "type": "boolean",
-            "example": true
+            "example": false
           },
           "contactType": {
             "description": "Contact's type",

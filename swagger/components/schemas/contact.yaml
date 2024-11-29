@@ -4,7 +4,6 @@ required:
   - name
   - phoneNumber
   - contactType
-  - userId
 properties:
   _id:
     description: "Contact's id"
@@ -26,7 +25,7 @@ properties:
   isFavourite:
     description: "Contact's is favourite choice"
     type: boolean
-    example: true
+    example: false
   contactType:
     description: "Contact's type"
     type: string

@@ -13,8 +13,6 @@ import { UPLOAD_DIR } from './constants/index.js';
 
 import { swaggerDocs } from './middlewares/swaggerDocs.js';
 
-
-
 export const setupServer = () => {
 
     const app = express();
@@ -30,8 +28,6 @@ app.use(
       },
     }),
   );
-
-
   // app.use(contactsRouter);
 app.use(router);
 

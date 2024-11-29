@@ -31,7 +31,7 @@ requestBody:
           isFavourite:
             description: 'Whether is contact a favorite'
             type: boolean
-            example: false
+            example: true
           contactType:
             description: "Contact's type"
             type: string
